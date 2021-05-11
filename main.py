@@ -132,6 +132,7 @@ async def forward(event):
     chat_info = await client.get_entity(chat_id)
     chat_link = f'Forward : [{chat_info.title}](t.me/{chat_info.username})\n'
     text = event.text
+    print(text)
     text = change_text(text)    
     
     text = chat_link + text
