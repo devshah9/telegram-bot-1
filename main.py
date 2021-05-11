@@ -6,8 +6,10 @@ from telethon.tl.types import PeerUser, PeerChat, PeerChannel
 import asyncio
 from telethon import TelegramClient, events
 import os
-import telethon
-import requests
+import logging
+logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+                   level=logging.INFO)
+
 
 api_key = 'RiTp4avDsmbb59ayWQDTcGITaDD38agYeswa2PYTtO4aOSrrAJCIfUHaAq2D0Qt0'
 api_secret = 'plKKdaze2PIPuzFKLeQ8xjn0vkp6vSeZ7FKs8DBX9aGo9mJFlBkrfda4iPNUl8zQ'
@@ -132,7 +134,7 @@ async def forward(event):
     chat_info = await client.get_entity(chat_id)
     chat_link = f'Forward : [{chat_info.title}](t.me/{chat_info.username})\n'
     text = event.text
-    print(text)
+    print(chat_info)
     text = change_text(text)    
     
     text = chat_link + text
