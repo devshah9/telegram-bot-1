@@ -67,7 +67,6 @@ def change_text(text):
             sl = i.split()[-1]
         elif 'scalp' in i.lower():
             scalp = re.search(r'(long|short)', i.lower())
-            print(scalp.group(), i)
             if scalp.group(0) == 'long':
                 b = 'Long'
             if scalp.group(0) == 'short':
